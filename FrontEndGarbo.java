@@ -2,14 +2,31 @@ package jeapordy;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.io.*;
+import java.util.*;
+
 import javax.swing.*;
 
 public class FrontEndGarbo {
-
-	public static void startWindow() {
+	
+	public void inputQuestions(String file, ArrayList<Question> a) throws IOException, FileNotFoundException {
+        Scanner inF = new Scanner(new File(file));
+        while (inF.hasNextLine()) {
+			String category = inF.nextLine();
+			int points = inF.nextInt();
+			inF.nextLine();
+			String question = inF.nextLine();
+			String answer = inF.nextLine();
+			a.add(new Question(category, points, question, answer));
+		}
+        inF.close();
+	}
+	
+	public void startWindow() {
+		
 		JFrame window = new JFrame();
 		window.setSize(600,400);
-		window.setTitle("Jeopordy");
+		window.setTitle("Jeopardy");
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JPanel myPanel = new JPanel();
@@ -35,7 +52,7 @@ public class FrontEndGarbo {
 		JLabel cat1 = new JLabel("Java");
 		JLabel cat2 = new JLabel("Pokemon");
 		JLabel cat3 = new JLabel("Oranges");
-		JLabel cat4 = new JLabel("Jai");
+		JLabel cat4 = new JLabel("Minecraft");
 		
 		//myPanel.add(title);
 		myPanel.add(cat1);
@@ -124,6 +141,7 @@ public class FrontEndGarbo {
 		{
 		  public void actionPerformed(ActionEvent e)
 		  {
+			
 		    third1.setVisible(false);
 		  }
 		});
@@ -173,7 +191,7 @@ public class FrontEndGarbo {
 		{
 		  public void actionPerformed(ActionEvent e)
 		  {
-		    fourth3.setVisible(false);
+		    myPanel.setVisible(false);
 		  }
 		});
 	}
