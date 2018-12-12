@@ -21,6 +21,15 @@ public class Question {
 		this.answer = answer;
 		
 	}
+	
+	public Question(){
+		this.category = "";
+		this.points = 0;
+		this.question = "";
+		this.answer = "";
+		
+	}
+	
 	public String toString() {
 		String str = "";
 		str += "Category: " + category;

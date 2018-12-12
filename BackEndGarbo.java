@@ -7,18 +7,19 @@ import java.util.*;
 import javax.swing.*;
 
 public class BackEndGarbo {
-	public JPanel questionPanel(ArrayList<Question> questionList, String category, int pointValue) {
+	public static int turns = 0;
+	public JPanel questionPanel(ArrayList<Question> questionList, String category, int pointValue, JPanel myPanel) {
 		JPanel questionPanel = new JPanel();
-		String question = "";
-		
+		Question chosenQuestion = new Question();
+		JPanel answerPanel = new JPanel();
 		for(int i = 0; i<questionList.size(); i++) {
 			Question questionStats = questionList.get(i);
 			if(questionStats.getCategory().equals(category) && questionStats.getPoints() == pointValue) {
-				question = questionStats.getQuestion();
+				chosenQuestion = new Question(category, pointValue, questionStats.getQuestion(), questionStats.getAnswer());
 			}
 		}
 		
-		JLabel question1 = new JLabel(question);
+		JLabel question1 = new JLabel(chosenQuestion.getQuestion());
 		JLabel cat1 = new JLabel(category);
 		JLabel points = new JLabel("" + pointValue);
 		JTextArea answerField = new JTextArea("Enter Answer Here");
@@ -30,19 +31,42 @@ public class BackEndGarbo {
 		questionPanel.add(answerField);
 		questionPanel.add(enterAnswer);
 		
+		JButton goOnButton = new JButton("Next");
 		enterAnswer.addActionListener(new ActionListener()
 		{
 			  public void actionPerformed(ActionEvent e)
 			  {
-				  for(int i = 0; i<questionList.size(); i++) {
-						Question questionStats = questionList.get(i);
-						if(questionStats.getCategory().equals(category)) {
-							
-						}
+				  answerPanel.setVisible(false);
+				  turns +=1;
 			  }
+		});
+		
+		enterAnswer.addActionListener(new ActionListener()
+		{
+			  public void actionPerformed(ActionEvent e)
+			  {
+				  questionPanel.setVisible(false);
+				  
+				  if(chosenQuestion.getAnswer().equals(answerField.getText())) {
+					    answerPanel.setBackground(Color.green);
+						JLabel correctMessage = new JLabel("You are correct!");
+						
+						answerPanel.add(correctMessage);
+						answerPanel.add(goOnButton);
+
+				  }
+				  else {
+					  answerPanel.setBackground(Color.red);
+					  JLabel incorrectMessage = new JLabel("You are incorrect :("); 
+					  JButton goOnButton = new JButton("Next");
+					  
+					  answerPanel.add(incorrectMessage);
+					  answerPanel.add(goOnButton);
+				  }
 			}
 		});
 		return questionPanel;
 	}
-}
 
+}
+		
