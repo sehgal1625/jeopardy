@@ -8,9 +8,9 @@ import javax.swing.*;
 
 public class BackEndGarbo {
 	public static int turns = 0;
-	public JPanel questionPanel(ArrayList<Question> questionList, String category, int pointValue, JPanel myPanel) {
+	public Question chosenQuestion = new Question();
+	public JPanel questionPanel(ArrayList<Question> questionList, String category, int pointValue) {
 		JPanel questionPanel = new JPanel();
-		Question chosenQuestion = new Question();
 		JPanel answerPanel = new JPanel();
 		for(int i = 0; i<questionList.size(); i++) {
 			Question questionStats = questionList.get(i);
@@ -24,7 +24,6 @@ public class BackEndGarbo {
 		JLabel points = new JLabel("" + pointValue);
 		JTextArea answerField = new JTextArea("Enter Answer Here");
 		JButton enterAnswer = new JButton("Enter Answer");
-		
 		questionPanel.add(cat1);
 		questionPanel.add(points);
 		questionPanel.add(question1);
@@ -46,8 +45,7 @@ public class BackEndGarbo {
 			  public void actionPerformed(ActionEvent e)
 			  {
 				  questionPanel.setVisible(false);
-				  
-				  if(chosenQuestion.getAnswer().equals(answerField.getText())) {
+				  if(answerField.getText().equalsIgnoreCase(chosenQuestion.getAnswer())) {
 					    answerPanel.setBackground(Color.green);
 						JLabel correctMessage = new JLabel("You are correct!");
 						

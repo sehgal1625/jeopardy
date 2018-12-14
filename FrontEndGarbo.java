@@ -7,7 +7,7 @@ import java.util.*;
 import javax.swing.*;
 
 public class FrontEndGarbo {
-	
+	BackEndGarbo beg = new BackEndGarbo();
 	public void inputQuestions(String file, ArrayList<Question> a) throws IOException, FileNotFoundException {
         Scanner inF = new Scanner(new File(file));
         while (inF.hasNextLine()) {
@@ -21,7 +21,7 @@ public class FrontEndGarbo {
         inF.close();
 	}
 	
-	public void startWindow() {
+	public void startWindow(ArrayList<Question> questions) {
 		
 		JFrame window = new JFrame();
 		window.setSize(600,400);
@@ -84,7 +84,9 @@ public class FrontEndGarbo {
 		{
 		  public void actionPerformed(ActionEvent e)
 		  {
-		    first1.setVisible(false);
+			  myPanel.setVisible(false);
+			  beg.questionPanel(questions,"AP Java", 100);
+			  myPanel.setVisible(true);
 		  }
 		});
 		first2.addActionListener(new ActionListener()
@@ -191,6 +193,8 @@ public class FrontEndGarbo {
 		  public void actionPerformed(ActionEvent e)
 		  {
 		    myPanel.setVisible(false);
+		    beg.questionPanel(questions,"AP Java", 400);
+		    myPanel.setVisible(true);
 		  }
 		});
 	}
