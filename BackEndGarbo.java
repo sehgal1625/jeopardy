@@ -16,8 +16,6 @@ public class BackEndGarbo {
 		JPanel questionPanel = new JPanel();
 		questionPanel.setSize(600, 400);
 		
-		
-		
 		for(int i = 0; i<questionList.size(); i++) {
 			Question questionStats = questionList.get(i);
 			if(questionStats.getCategory().equals(category) && questionStats.getPoints() == pointValue) {
@@ -26,22 +24,14 @@ public class BackEndGarbo {
 		}
 		
 		JLabel question1 = new JLabel(chosenQuestion.getQuestion(), JLabel.CENTER);
-		question1.setSize(100, 100);
-		question1.setLocation(95, 45);
 		
 		JLabel cat1 = new JLabel(category, JLabel.CENTER);
-		cat1.setSize(100, 100);
-		cat1.setLocation(105, 65);
 		
 		JLabel points = new JLabel("(" + pointValue + ")", JLabel.CENTER);
-		points.setSize(100, 100);
-		points.setLocation(125, 85);
 		
 		JTextArea answerField = new JTextArea("Enter Answer Here");
 		
 		JButton enterAnswer = new JButton("Enter Answer");
-		points.setSize(100, 30);
-		points.setLocation(95, 45);
 		
 		questionPanel.add(cat1);
 		questionPanel.add(points);
@@ -77,10 +67,16 @@ public class BackEndGarbo {
 				  else {
 					  answerPanel.setBackground(Color.red);
 					  JLabel incorrectMessage = new JLabel("You are incorrect :("); 
+					  JLabel youEntered = new JLabel("You entered: " + answerField.getText());
+					  JLabel actualAnswer = new JLabel("The correct answer is: " + chosenQuestion.getAnswer());
 					  
 					  answerPanel.add(incorrectMessage);
+					  answerPanel.add(youEntered);
+					  answerPanel.add(actualAnswer);
 					  answerPanel.add(goOnButton);
 				  }
+				  
+				  answerPanel.setLayout(new GridLayout(5,4));
 				  a.add(answerPanel);
 				  answerPanel.setVisible(true);
 			}
