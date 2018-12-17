@@ -26,22 +26,11 @@ public class BackEndGarbo {
 		}
 		
 		JLabel question1 = new JLabel(chosenQuestion.getQuestion(), JLabel.CENTER);
-		question1.setSize(100, 100);
-		question1.setLocation(95, 45);
-		
 		JLabel cat1 = new JLabel(category, JLabel.CENTER);
-		cat1.setSize(100, 100);
-		cat1.setLocation(105, 65);
-		
 		JLabel points = new JLabel("(" + pointValue + ")", JLabel.CENTER);
-		points.setSize(100, 100);
-		points.setLocation(125, 85);
-		
 		JTextArea answerField = new JTextArea("Enter Answer Here");
 		
 		JButton enterAnswer = new JButton("Enter Answer");
-		points.setSize(100, 30);
-		points.setLocation(95, 45);
 		
 		questionPanel.add(cat1);
 		questionPanel.add(points);

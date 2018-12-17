@@ -47,10 +47,10 @@ public class FrontEndGarbo {
 		JButton fourth4 = new JButton("400");
 		
 		//JLabel title = new JLabel("Jeopardy");
-		JLabel cat1 = new JLabel("Java");
-		JLabel cat2 = new JLabel("Pokemon");
-		JLabel cat3 = new JLabel("Oranges");
-		JLabel cat4 = new JLabel("Minecraft");
+		JLabel cat1 = new JLabel("Java", JLabel.CENTER);
+		JLabel cat2 = new JLabel("Pokemon", JLabel.CENTER);
+		JLabel cat3 = new JLabel("Oranges", JLabel.CENTER);
+		JLabel cat4 = new JLabel("Minecraft", JLabel.CENTER);
 		
 		//myPanel.add(title);
 		myPanel.add(cat1);
