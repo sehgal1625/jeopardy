@@ -8,6 +8,6 @@ public class JeapordyDriver {
 		ArrayList<Question> questions = new ArrayList<Question>();
 		FrontEndGarbo feg = new FrontEndGarbo();
 		feg.inputQuestions("jeopardyTextFile", questions);
-		feg.startWindow(questions);		
+		feg.startWindow(questions);
 	}
 }

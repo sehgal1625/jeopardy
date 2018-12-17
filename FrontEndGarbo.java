@@ -20,12 +20,6 @@ public class FrontEndGarbo {
 		}
         inF.close();
 	}
-	
-	public void setWindowLocations(JFrame window, JPanel panel) {
-		window.setContentPane(panel);
-		window.setSize(310, 125);
-		window.setLocationByPlatform(true);
-	}
 	public void startWindow(ArrayList<Question> questions) {
 		
 		JFrame window = new JFrame();
@@ -89,15 +83,12 @@ public class FrontEndGarbo {
 		{
 		  public void actionPerformed(ActionEvent e)
 		  {
+			  first1.setVisible(false);
 			  myPanel.setVisible(false);
-			  JPanel questionPanel = beg.questionPanel(questions,"AP Java", 100);
+			  JPanel questionPanel = beg.questionPanel(questions,"AP Java", 100, myPanel, window);
 			  window.add(questionPanel);
 			  questionPanel.setVisible(true);
-			  
-			  setWindowLocations(window, questionPanel);
-			  
-			  window.setVisible(true);
-			  //myPanel.setVisible(true);
+			  questionPanel.setLayout(new GridLayout(5,1));			  
 		  }
 		});
 		first2.addActionListener(new ActionListener()

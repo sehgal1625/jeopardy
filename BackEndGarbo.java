@@ -10,12 +10,13 @@ public class BackEndGarbo {
 	
 	public static int turns = 0;
 	public Question chosenQuestion = new Question();
+	JPanel answerPanel = new JPanel();
 	
-	public JPanel questionPanel(ArrayList<Question> questionList, String category, int pointValue) {
+	public JPanel questionPanel(ArrayList<Question> questionList, String category, int pointValue, JPanel myPanel, JFrame a) {
 		JPanel questionPanel = new JPanel();
 		questionPanel.setSize(600, 400);
 		
-		JPanel answerPanel = new JPanel();
+		
 		
 		for(int i = 0; i<questionList.size(); i++) {
 			Question questionStats = questionList.get(i);
@@ -50,12 +51,13 @@ public class BackEndGarbo {
 		
 		JButton goOnButton = new JButton("Next");
 		
-		enterAnswer.addActionListener(new ActionListener()
+		goOnButton.addActionListener(new ActionListener()
 		{
 			  public void actionPerformed(ActionEvent e)
 			  {
 				  answerPanel.setVisible(false);
 				  turns +=1;
+				  myPanel.setVisible(true);
 			  }
 		});
 		
@@ -63,23 +65,24 @@ public class BackEndGarbo {
 		{
 			  public void actionPerformed(ActionEvent e)
 			  {
-				  questionPanel.removeAll();
+				  questionPanel.setVisible(false);
 				  if(answerField.getText().equalsIgnoreCase(chosenQuestion.getAnswer())) {
 					    answerPanel.setBackground(Color.green);
 						JLabel correctMessage = new JLabel("You are correct!", JLabel.CENTER);
 						
 						answerPanel.add(correctMessage);
 						answerPanel.add(goOnButton);
-
+						
 				  }
 				  else {
 					  answerPanel.setBackground(Color.red);
 					  JLabel incorrectMessage = new JLabel("You are incorrect :("); 
-					  JButton goOnButton = new JButton("Next");
 					  
 					  answerPanel.add(incorrectMessage);
 					  answerPanel.add(goOnButton);
 				  }
+				  a.add(answerPanel);
+				  answerPanel.setVisible(true);
 			}
 		});
 		return questionPanel;
