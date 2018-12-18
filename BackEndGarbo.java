@@ -12,7 +12,10 @@ public class BackEndGarbo {
 	public Question chosenQuestion = new Question();
 	JPanel answerPanel = new JPanel();
 	
-	public JPanel questionPanel(ArrayList<Question> questionList, String category, int pointValue, JPanel myPanel, JFrame a) {
+	private int person1Points;
+	private int person2Points;
+	
+	public JPanel questionPanel(ArrayList<Question> questionList, String category, int pointValue, JPanel myPanel, JFrame a, JLabel one, JLabel two) {
 		JPanel questionPanel = new JPanel();
 		questionPanel.setSize(600, 400);
 		
@@ -29,7 +32,7 @@ public class BackEndGarbo {
 		
 		JLabel points = new JLabel("(" + pointValue + ")", JLabel.CENTER);
 		
-		JTextArea answerField = new JTextArea("Enter Answer Here");
+		JTextArea answerField = new JTextArea("Enter Answer here\nMake sure it is in the form of a question, or it will be wrong.");
 		
 		JButton enterAnswer = new JButton("Enter Answer");
 		
@@ -47,6 +50,7 @@ public class BackEndGarbo {
 			  {
 				  answerPanel.setVisible(false);
 				  turns +=1;
+				  
 				  myPanel.setVisible(true);
 			  }
 		});
@@ -55,6 +59,7 @@ public class BackEndGarbo {
 		{
 			  public void actionPerformed(ActionEvent e)
 			  {
+				  answerPanel.removeAll();
 				  questionPanel.setVisible(false);
 				  if(answerField.getText().equalsIgnoreCase(chosenQuestion.getAnswer())) {
 					    answerPanel.setBackground(Color.green);
@@ -62,7 +67,12 @@ public class BackEndGarbo {
 						
 						answerPanel.add(correctMessage);
 						answerPanel.add(goOnButton);
-						
+						if(turns % 2 == 0) {
+							person1Points += pointValue;
+						}
+						if(turns % 2 == 1) {
+							person2Points += pointValue;
+						}
 				  }
 				  else {
 					  answerPanel.setBackground(Color.red);
@@ -84,5 +94,32 @@ public class BackEndGarbo {
 		return questionPanel;
 	}
 
+	/**
+	 * @return the person1Points
+	 */
+	public int getPerson1Points() {
+		return person1Points;
+	}
+
+	/**
+	 * @param person1Points the person1Points to set
+	 */
+	public void setPerson1Points(int person1Points) {
+		this.person1Points = person1Points;
+	}
+
+	/**
+	 * @return the person2Points
+	 */
+	public int getPerson2Points() {
+		return person2Points;
+	}
+
+	/**
+	 * @param person2Points the person2Points to set
+	 */
+	public void setPerson2Points(int person2Points) {
+		this.person2Points = person2Points;
+	}
 }
 		
