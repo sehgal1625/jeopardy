@@ -111,10 +111,10 @@ public class FrontEndGarbo {
 		  {
 			  first1.setVisible(false);
 			  myPanel.setVisible(false);
-			  JPanel questionPanel = beg.questionPanel(questions,"AP Java", 100, myPanel, window, pointsForPerson1, pointsForPerson2);
+			  JPanel questionPanel = beg.questionPanel(questions,"AP Java", 100, myPanel, window, pointsForPerson1, pointsForPerson2, p1Name, p2Name);
 			  window.add(questionPanel);
 			  questionPanel.setVisible(true);
-			  questionPanel.setLayout(new GridLayout(5,1));			  
+			  questionPanel.setLayout(new GridLayout(6,1));			  
 		  }
 		});
 		first2.addActionListener(new ActionListener()
@@ -123,10 +123,10 @@ public class FrontEndGarbo {
 		  {
 		    first2.setVisible(false);
 		    myPanel.setVisible(false);
-			JPanel questionPanel = beg.questionPanel(questions,"AP Java", 200, myPanel, window);
+			JPanel questionPanel = beg.questionPanel(questions,"AP Java", 200, myPanel, window, pointsForPerson1, pointsForPerson2, p1Name, p2Name);
 			window.add(questionPanel);
 			questionPanel.setVisible(true);
-			questionPanel.setLayout(new GridLayout(5,1));		
+			questionPanel.setLayout(new GridLayout(6,1));		
 		  }
 		});
 		first3.addActionListener(new ActionListener()
@@ -135,10 +135,10 @@ public class FrontEndGarbo {
 		  {
 		    first3.setVisible(false);
 		    myPanel.setVisible(false);
-			JPanel questionPanel = beg.questionPanel(questions,"AP Java", 300, myPanel, window);
+			JPanel questionPanel = beg.questionPanel(questions,"AP Java", 300, myPanel, window, pointsForPerson1, pointsForPerson2, p1Name, p2Name);
 			window.add(questionPanel);
 			questionPanel.setVisible(true);
-			questionPanel.setLayout(new GridLayout(5,1));		
+			questionPanel.setLayout(new GridLayout(6,1));		
 		  }
 		});
 		first4.addActionListener(new ActionListener()
@@ -147,10 +147,10 @@ public class FrontEndGarbo {
 		  {
 		    first4.setVisible(false);
 		    myPanel.setVisible(false);
-			JPanel questionPanel = beg.questionPanel(questions,"AP Java", 400, myPanel, window);
+			JPanel questionPanel = beg.questionPanel(questions,"AP Java", 400, myPanel, window, pointsForPerson1, pointsForPerson2, p1Name, p2Name);
 			window.add(questionPanel);
 			questionPanel.setVisible(true);
-			questionPanel.setLayout(new GridLayout(5,1));		
+			questionPanel.setLayout(new GridLayout(6,1));		
 		  }
 		});
 		second1.addActionListener(new ActionListener()
@@ -159,10 +159,10 @@ public class FrontEndGarbo {
 		  {
 		    second1.setVisible(false);
 		    myPanel.setVisible(false);
-			JPanel questionPanel = beg.questionPanel(questions,"Pokemon", 100, myPanel, window);
+			JPanel questionPanel = beg.questionPanel(questions,"Pokemon", 100, myPanel, window, pointsForPerson1, pointsForPerson2, p1Name, p2Name);
 			window.add(questionPanel);
 			questionPanel.setVisible(true);
-			questionPanel.setLayout(new GridLayout(5,1));		
+			questionPanel.setLayout(new GridLayout(6,1));		
 		  }
 		});
 		second2.addActionListener(new ActionListener()
@@ -171,10 +171,10 @@ public class FrontEndGarbo {
 		  {
 		    second2.setVisible(false);
 		    myPanel.setVisible(false);
-			JPanel questionPanel = beg.questionPanel(questions,"Pokemon", 200, myPanel, window);
+			JPanel questionPanel = beg.questionPanel(questions,"Pokemon", 200, myPanel, window, pointsForPerson1, pointsForPerson2, p1Name, p2Name);
 			window.add(questionPanel);
 			questionPanel.setVisible(true);
-			questionPanel.setLayout(new GridLayout(5,1));		
+			questionPanel.setLayout(new GridLayout(6,1));		
 		  }
 		});
 		second3.addActionListener(new ActionListener()
@@ -183,10 +183,10 @@ public class FrontEndGarbo {
 		  {
 		    second3.setVisible(false);
 		    myPanel.setVisible(false);
-			JPanel questionPanel = beg.questionPanel(questions,"Pokemon", 300, myPanel, window);
+			JPanel questionPanel = beg.questionPanel(questions,"Pokemon", 300, myPanel, window, pointsForPerson1, pointsForPerson2, p1Name, p2Name);
 			window.add(questionPanel);
 			questionPanel.setVisible(true);
-			questionPanel.setLayout(new GridLayout(5,1));		
+			questionPanel.setLayout(new GridLayout(6,1));		
 		  }
 		});
 		second4.addActionListener(new ActionListener()
@@ -195,10 +195,10 @@ public class FrontEndGarbo {
 		  {
 		    second4.setVisible(false);
 		    myPanel.setVisible(false);
-			JPanel questionPanel = beg.questionPanel(questions,"Pokemon", 400, myPanel, window);
+			JPanel questionPanel = beg.questionPanel(questions,"Pokemon", 400, myPanel, window, pointsForPerson1, pointsForPerson2, p1Name, p2Name);
 			window.add(questionPanel);
 			questionPanel.setVisible(true);
-			questionPanel.setLayout(new GridLayout(5,1));		
+			questionPanel.setLayout(new GridLayout(6,1));		
 		  }
 		});
 		third1.addActionListener(new ActionListener()
@@ -208,10 +208,10 @@ public class FrontEndGarbo {
 			
 		    third1.setVisible(false);
 		    myPanel.setVisible(false);
-			JPanel questionPanel = beg.questionPanel(questions,"Oranges", 100, myPanel, window);
+			JPanel questionPanel = beg.questionPanel(questions,"Oranges", 100, myPanel, window, pointsForPerson1, pointsForPerson2, p1Name, p2Name);
 			window.add(questionPanel);
 			questionPanel.setVisible(true);
-			questionPanel.setLayout(new GridLayout(5,1));		
+			questionPanel.setLayout(new GridLayout(6,1));		
 		  }
 		});
 		third2.addActionListener(new ActionListener()
@@ -220,10 +220,10 @@ public class FrontEndGarbo {
 		  {
 		    third2.setVisible(false);
 		    myPanel.setVisible(false);
-			JPanel questionPanel = beg.questionPanel(questions,"Oranges", 200, myPanel, window);
+			JPanel questionPanel = beg.questionPanel(questions,"Oranges", 200, myPanel, window, pointsForPerson1, pointsForPerson2, p1Name, p2Name);
 			window.add(questionPanel);
 			questionPanel.setVisible(true);
-			questionPanel.setLayout(new GridLayout(5,1));		
+			questionPanel.setLayout(new GridLayout(6,1));		
 		  }
 		});
 		third3.addActionListener(new ActionListener()
@@ -232,10 +232,10 @@ public class FrontEndGarbo {
 		  {
 		    third3.setVisible(false);
 		    myPanel.setVisible(false);
-			JPanel questionPanel = beg.questionPanel(questions,"Oranges", 300, myPanel, window);
+			JPanel questionPanel = beg.questionPanel(questions,"Oranges", 300, myPanel, window, pointsForPerson1, pointsForPerson2, p1Name, p2Name);
 			window.add(questionPanel);
 			questionPanel.setVisible(true);
-			questionPanel.setLayout(new GridLayout(5,1));		
+			questionPanel.setLayout(new GridLayout(6,1));		
 		  }
 		});
 		third4.addActionListener(new ActionListener()
@@ -244,10 +244,10 @@ public class FrontEndGarbo {
 		  {
 		    third4.setVisible(false);
 		    myPanel.setVisible(false);
-			JPanel questionPanel = beg.questionPanel(questions,"Oranges", 400, myPanel, window);
+			JPanel questionPanel = beg.questionPanel(questions,"Oranges", 400, myPanel, window, pointsForPerson1, pointsForPerson2, p1Name, p2Name);
 			window.add(questionPanel);
 			questionPanel.setVisible(true);
-			questionPanel.setLayout(new GridLayout(5,1));		
+			questionPanel.setLayout(new GridLayout(6,1));		
 		  }
 		});
 		fourth1.addActionListener(new ActionListener()
@@ -256,10 +256,10 @@ public class FrontEndGarbo {
 		  {
 		    fourth1.setVisible(false);
 		    myPanel.setVisible(false);
-			JPanel questionPanel = beg.questionPanel(questions,"Minecraft", 100, myPanel, window);
+			JPanel questionPanel = beg.questionPanel(questions,"Minecraft", 100, myPanel, window, pointsForPerson1, pointsForPerson2, p1Name, p2Name);
 			window.add(questionPanel);
 			questionPanel.setVisible(true);
-			questionPanel.setLayout(new GridLayout(5,1));		
+			questionPanel.setLayout(new GridLayout(6,1));		
 		  }
 		});
 		fourth2.addActionListener(new ActionListener()
@@ -268,10 +268,10 @@ public class FrontEndGarbo {
 		  {
 		    fourth2.setVisible(false);
 		    myPanel.setVisible(false);
-			JPanel questionPanel = beg.questionPanel(questions,"Minecraft", 200, myPanel, window);
+			JPanel questionPanel = beg.questionPanel(questions,"Minecraft", 200, myPanel, window, pointsForPerson1, pointsForPerson2, p1Name, p2Name);
 			window.add(questionPanel);
 			questionPanel.setVisible(true);
-			questionPanel.setLayout(new GridLayout(5,1));		
+			questionPanel.setLayout(new GridLayout(6,1));		
 		  }
 		});
 		fourth3.addActionListener(new ActionListener()
@@ -280,10 +280,10 @@ public class FrontEndGarbo {
 		  {
 		    fourth3.setVisible(false);
 		    myPanel.setVisible(false);
-			JPanel questionPanel = beg.questionPanel(questions,"Minecraft", 300, myPanel, window);
+			JPanel questionPanel = beg.questionPanel(questions,"Minecraft", 300, myPanel, window, pointsForPerson1, pointsForPerson2, p1Name, p2Name);
 			window.add(questionPanel);
 			questionPanel.setVisible(true);
-			questionPanel.setLayout(new GridLayout(5,1));		
+			questionPanel.setLayout(new GridLayout(6,1));		
 		  }
 		});
 		fourth4.addActionListener(new ActionListener()
@@ -292,10 +292,10 @@ public class FrontEndGarbo {
 		  {
 			  fourth4.setVisible(false);
 			  myPanel.setVisible(false);
-			  JPanel questionPanel = beg.questionPanel(questions,"Minecraft", 400, myPanel, window);
+			  JPanel questionPanel = beg.questionPanel(questions,"Minecraft", 400, myPanel, window, pointsForPerson1, pointsForPerson2, p1Name, p2Name);
 			  window.add(questionPanel);
 			  questionPanel.setVisible(true);
-			  questionPanel.setLayout(new GridLayout(5,1));		
+			  questionPanel.setLayout(new GridLayout(6,1));		
 		  }
 		});
 	}

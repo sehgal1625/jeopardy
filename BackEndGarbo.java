@@ -15,7 +15,7 @@ public class BackEndGarbo {
 	private int person1Points;
 	private int person2Points;
 	
-	public JPanel questionPanel(ArrayList<Question> questionList, String category, int pointValue, JPanel myPanel, JFrame a, JLabel one, JLabel two) {
+	public JPanel questionPanel(ArrayList<Question> questionList, String category, int pointValue, JPanel myPanel, JFrame a, JLabel one, JLabel two, String p1Name, String p2Name) {
 		JPanel questionPanel = new JPanel();
 		questionPanel.setSize(600, 400);
 		
@@ -24,6 +24,14 @@ public class BackEndGarbo {
 			if(questionStats.getCategory().equals(category) && questionStats.getPoints() == pointValue) {
 				chosenQuestion = new Question(category, pointValue, questionStats.getQuestion(), questionStats.getAnswer());
 			}
+		}
+		if(turns % 2 == 0) {
+			JLabel playerTurn = new JLabel(p1Name + "'s Turn", JLabel.CENTER);
+			questionPanel.add(playerTurn);
+		}
+		else {
+			JLabel playerTurn = new JLabel(p2Name + "'s Turn", JLabel.CENTER);
+			questionPanel.add(playerTurn);
 		}
 		
 		JLabel question1 = new JLabel(chosenQuestion.getQuestion(), JLabel.CENTER);
@@ -48,10 +56,35 @@ public class BackEndGarbo {
 		{
 			  public void actionPerformed(ActionEvent e)
 			  {
+				  JLabel winMessage;
 				  answerPanel.setVisible(false);
 				  turns +=1;
-				  
+				  one.removeAll();
+				  two.removeAll();
+				  one.setText("" + person1Points);
+				  two.setText("" + person2Points);
 				  myPanel.setVisible(true);
+				  if(turns == 16) {
+					  myPanel.setVisible(false);
+					  JPanel endPanel = new JPanel();
+					  one.setText(p1Name + "'s Points: " + person1Points);
+					  two.setText(p2Name + "'s Points: " + person2Points);
+					  endPanel.add(one);
+					  endPanel.add(two);
+					  a.add(endPanel);
+					  endPanel.setVisible(true);
+					  	if(person1Points > person2Points) {
+					  		winMessage = new JLabel(p1Name + " wins!!!!!", JLabel.CENTER);
+					  	}
+					  	else if(person2Points > person1Points) {
+					  		winMessage = new JLabel(p2Name + " wins!!!!!", JLabel.CENTER);
+					  	}
+					  	else {
+					  		winMessage = new JLabel(p1Name + " tied with " + p2Name + "!!!!!", JLabel.CENTER);
+					  	}
+					  	endPanel.add(winMessage);
+					  	endPanel.setLayout(new GridLayout(3,1));
+				  }
 			  }
 		});
 		
