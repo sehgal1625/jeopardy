@@ -9,12 +9,12 @@ import javax.swing.*;
 public class FrontEndGarbo {
 	
 	BackEndGarbo beg = new BackEndGarbo();
+	JFrame window = new JFrame();
 	
 	public String p1Name;
 	public String p2Name;
-	
+
 	Scanner kb = new Scanner(System.in);
-	
 	public void inputQuestions(String file, ArrayList<Question> a) throws IOException, FileNotFoundException {
         Scanner inF = new Scanner(new File(file));
         while (inF.hasNextLine()) {
@@ -33,14 +33,31 @@ public class FrontEndGarbo {
 		System.out.print("Enter Player Two's Name: ");
 		p2Name = kb.nextLine();
 	}
-	
-	public void startWindow(ArrayList<Question> questions) {
+	public void beginningPanel(ArrayList<Question> a) {
 		
-		JFrame window = new JFrame();
 		window.setSize(600,400);
 		window.setTitle("Jeopardy");
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
+		JPanel beginningPanel = new JPanel();
+		JLabel rules = new JLabel("You are going to take turns to answer Jeopardy questions. You have to choose a question varying in category and point value. If you get the question right you will be awarded the points the question was worth.");
+		JButton startGame = new JButton("Start Game");
+		startGame.addActionListener(new ActionListener()
+		{
+		  public void actionPerformed(ActionEvent e)
+		  {
+			  beginningPanel.setVisible(false);
+			  startWindow(a);
+		  }
+		});
+		beginningPanel.add(rules);
+		beginningPanel.add(startGame);
+		beginningPanel.setLayout(new GridLayout(2,1));
+		window.add(beginningPanel);
+		beginningPanel.setVisible(true);
+		window.setVisible(true);
+	}
+	public void startWindow(ArrayList<Question> questions) {
 		JPanel myPanel = new JPanel();
 		
 		JButton first1 = new JButton("100");
@@ -75,7 +92,6 @@ public class FrontEndGarbo {
 		JLabel person2Message = new JLabel("Points for " + p2Name + ": ", JLabel.CENTER);
 		JLabel pointsForPerson2 = new JLabel(person2PointsString, JLabel.CENTER);
 		
-		//myPanel.add(title);
 		myPanel.add(cat1);
 		myPanel.add(cat2);
 		myPanel.add(cat3);
@@ -103,7 +119,6 @@ public class FrontEndGarbo {
 		myPanel.setLayout(new GridLayout(6,4));
 
 		window.add(myPanel);
-		window.setVisible(true);
 		
 		first1.addActionListener(new ActionListener()
 		{
