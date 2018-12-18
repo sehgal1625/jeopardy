@@ -145,7 +145,7 @@ public class FrontEndGarbo {
 		  {
 		    second2.setVisible(false);
 		    myPanel.setVisible(false);
-			JPanel questionPanel = beg.questionPanel(questions,"Pokemon", 100, myPanel, window);
+			JPanel questionPanel = beg.questionPanel(questions,"Pokemon", 200, myPanel, window);
 			window.add(questionPanel);
 			questionPanel.setVisible(true);
 			questionPanel.setLayout(new GridLayout(5,1));		
@@ -157,7 +157,7 @@ public class FrontEndGarbo {
 		  {
 		    second3.setVisible(false);
 		    myPanel.setVisible(false);
-			JPanel questionPanel = beg.questionPanel(questions,"Pokemon", 100, myPanel, window);
+			JPanel questionPanel = beg.questionPanel(questions,"Pokemon", 300, myPanel, window);
 			window.add(questionPanel);
 			questionPanel.setVisible(true);
 			questionPanel.setLayout(new GridLayout(5,1));		
@@ -169,7 +169,7 @@ public class FrontEndGarbo {
 		  {
 		    second4.setVisible(false);
 		    myPanel.setVisible(false);
-			JPanel questionPanel = beg.questionPanel(questions,"Pokemon", 100, myPanel, window);
+			JPanel questionPanel = beg.questionPanel(questions,"Pokemon", 400, myPanel, window);
 			window.add(questionPanel);
 			questionPanel.setVisible(true);
 			questionPanel.setLayout(new GridLayout(5,1));		
@@ -194,7 +194,7 @@ public class FrontEndGarbo {
 		  {
 		    third2.setVisible(false);
 		    myPanel.setVisible(false);
-			JPanel questionPanel = beg.questionPanel(questions,"Oranges", 100, myPanel, window);
+			JPanel questionPanel = beg.questionPanel(questions,"Oranges", 200, myPanel, window);
 			window.add(questionPanel);
 			questionPanel.setVisible(true);
 			questionPanel.setLayout(new GridLayout(5,1));		
@@ -206,7 +206,7 @@ public class FrontEndGarbo {
 		  {
 		    third3.setVisible(false);
 		    myPanel.setVisible(false);
-			JPanel questionPanel = beg.questionPanel(questions,"Oranges", 100, myPanel, window);
+			JPanel questionPanel = beg.questionPanel(questions,"Oranges", 300, myPanel, window);
 			window.add(questionPanel);
 			questionPanel.setVisible(true);
 			questionPanel.setLayout(new GridLayout(5,1));		
@@ -218,7 +218,7 @@ public class FrontEndGarbo {
 		  {
 		    third4.setVisible(false);
 		    myPanel.setVisible(false);
-			JPanel questionPanel = beg.questionPanel(questions,"Oranges", 100, myPanel, window);
+			JPanel questionPanel = beg.questionPanel(questions,"Oranges", 400, myPanel, window);
 			window.add(questionPanel);
 			questionPanel.setVisible(true);
 			questionPanel.setLayout(new GridLayout(5,1));		
@@ -242,7 +242,7 @@ public class FrontEndGarbo {
 		  {
 		    fourth2.setVisible(false);
 		    myPanel.setVisible(false);
-			JPanel questionPanel = beg.questionPanel(questions,"Minecraft", 100, myPanel, window);
+			JPanel questionPanel = beg.questionPanel(questions,"Minecraft", 200, myPanel, window);
 			window.add(questionPanel);
 			questionPanel.setVisible(true);
 			questionPanel.setLayout(new GridLayout(5,1));		
@@ -254,7 +254,7 @@ public class FrontEndGarbo {
 		  {
 		    fourth3.setVisible(false);
 		    myPanel.setVisible(false);
-			JPanel questionPanel = beg.questionPanel(questions,"Minecraft", 100, myPanel, window);
+			JPanel questionPanel = beg.questionPanel(questions,"Minecraft", 300, myPanel, window);
 			window.add(questionPanel);
 			questionPanel.setVisible(true);
 			questionPanel.setLayout(new GridLayout(5,1));		
@@ -266,7 +266,7 @@ public class FrontEndGarbo {
 		  {
 			  fourth4.setVisible(false);
 			  myPanel.setVisible(false);
-			  JPanel questionPanel = beg.questionPanel(questions,"Minecraft", 100, myPanel, window);
+			  JPanel questionPanel = beg.questionPanel(questions,"Minecraft", 400, myPanel, window);
 			  window.add(questionPanel);
 			  questionPanel.setVisible(true);
 			  questionPanel.setLayout(new GridLayout(5,1));		
